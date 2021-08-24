@@ -12,8 +12,10 @@ export default function Timekeeper() {
 
     if(router.query.duration && !timeInterval.fromInput) { 
         duration = router.query.duration;
+        startTime = endTime - duration;
     } else if(timeInterval.fromInput){ 
         duration = timeInterval.duration;
+        startTime = endTime - duration;
     }
 
     if (router.query.duration && router.query.duration != timeInterval.duration && !timeInterval.fromInput) {
